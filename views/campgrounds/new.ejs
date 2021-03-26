@@ -1,0 +1,47 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="card shadow">
+            <div class="card-body">
+                <h5 class="card-title">New Campground</h5>
+                <form action="/campgrounds" method="post" novalidate class="needs-validation"
+                      enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label class="form-label" for="title">Title</label>
+                        <input class="form-control" type="text" id="title" name="campground[title]" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="location">Location</label>
+                        <input class="form-control" type="text" id="location" name="campground[location]" required>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="file" class="form-control" id="inputGroupFile02" name="image" multiple>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="description">Description</label>
+                        <textarea class="form-control" type="text" id="description" name="campground[description]"
+                                  required></textarea>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">€</span>
+                        <input id="price" name="campground[price]" type="text" class="form-control" aria-label="Price"
+                               required>
+                        <span class="input-group-text">.00</span>
+                        <div class="valid-feedback">Looks good!</div>
+                    </div>
+                    <button class="btn btn-success mb-3" type="submit">Add Campground</button>
+                    <button class="btn btn-primary mb-3">
+                        <a class="text-decoration-none text-white" href="/campgrounds">
+                            Go back
+                        </a>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
